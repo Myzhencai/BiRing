@@ -276,7 +276,7 @@ def main():
     calibratex =calibratedmag[:,0]
     calibratey =calibratedmag[:,1]
     calibratez =calibratedmag[:,2]
-    # ax.scatter3D(calibratex, calibratey, calibratez, color="red")
+    ax.scatter3D(calibratex, calibratey, calibratez, color="red")
 
     calibratex1 =calibratedmag1[:,0]
     calibratey1 =calibratedmag1[:,1]
