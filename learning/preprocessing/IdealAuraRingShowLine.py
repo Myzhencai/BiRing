@@ -225,12 +225,39 @@ def rectPlanePoints():
     return rectplane
 
 
+def linePoints():
+    x = np.arange(-50, 50, 1)
+    # y = np.arange(-80, 80, 1)
+
+    rectplane = np.zeros((100, 3))
+    # print(rectplane[0][0])
+    for i in range(100):
+        xvalue = x[i]
+        yvalue = 20
+        rectplane[i]= np.array([xvalue, yvalue, 10])
+
+    rectplane = rectplane.reshape((-1, 3))
+
+    # # Creating figures for the plot
+    # fig = plt.figure(figsize=(10, 7))
+    # ax = plt.axes(projection="3d")
+    #
+    # xm = rectplane[:, 0]
+    # ym = rectplane[:, 1]
+    # zm = rectplane[:, 2]
+    #
+    # ax.scatter3D(xm, ym, zm, color="y")
+    # plt.title("3D scatter plot")
+    #
+    # plt.show()
+
+    return rectplane
 
 def main():
     # 加载实际的Sensor的读数以及对应的Pose和Rotation数据
-    pos = rectPlanePoints()
-    rot = np.zeros((16000,3))
-    rot1 = np.ones((16000,3))*20
+    pos = linePoints()
+    rot = np.zeros((100,3))
+    rot1 = np.ones((100,3))*20
 
     # 初始化需要优化的参数
     global_gain = [20]
